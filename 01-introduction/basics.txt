@@ -1,0 +1,37 @@
+Postgress:
+It uses SQL as its main query language. Postgress is basically a database engine which uses sql as its query language.
+
+What is Database (DB)?
+Basically it is a collection of related information that can be stored in a difference ways
+eg: Phonebook,Facebook user base
+
+
+Non Relational Databases:
+Organise data into one or more tables
+1.) each table has columns and rows
+2.) A unique key identifies each row.
+
+eg: mySql,Oracle,PostreSQL,mariaDb
+
+Tables and keys:
+Data are arranged in rows and columns
+The columns name defines the keys in the table
+A row defines the values correspoding to column name. Each row defines a record.
+Each row has a unique called primary key. This attribute is used to uniquely define a record in db.
+
+Structured Query language:
+It is used for interacting with RDBMS.
+Used to perform CRUD operatiosn as well as administatrative tasks (database mgmt,security,backup);
+Following things can be accomplished following:
+1.) CRUD operatiosn
+2.) Create and manage databases
+3.) Design and create db tables
+4.) Perform administatrative tasks -> (security, import/export)
+
+The code used on One RDBMS is not always portable to another without modification.
+The concepts will remain the same.
+Database Queries:
+They are requests made to DBMS for specific information.
+
+PostgreSQL (Postgress);
+It is object relational database management system.
