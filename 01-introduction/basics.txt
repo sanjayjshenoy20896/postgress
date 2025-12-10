@@ -35,3 +35,10 @@ They are requests made to DBMS for specific information.
 
 PostgreSQL (Postgress);
 It is object relational database management system.
+
+GUI Clients  vs Terminal/ CMD Clients
+There are 2 ways to connect to the database
+1.) Connect using a Client 
+2.) using a GUI Client -> Data Grip,Postico (mac only),pgadmin ( windows users only)
+3.) Terminal / CMD -> course fucus on that
+4.) Application
