@@ -1,0 +1,78 @@
+The commands in psql is done using psql shell
+
+The commands can be written in upper case or lowercase.
+It is generally preffered to follow upper case as some sql providers follow uppercase only
+Listing of databases:
+The listing of databases is done using "\l" command in the Terminal
+
+Creating a database:
+A new database can be created using the below command with a meaningfull name.
+CREATE DATABASE <database_name>
+Or 
+create database <database_name>
+
+Deleting a database:
+
+To view the list of commands using help cmd:
+psql --help
+
+Connecting to database using the terminal:
+Syntax: psql -h <hostname> -p <portno> -U <username> <dbname>
+eg:  psql -h localhost -p 5432 -U postgres test
+
+on the psql terminal: (helps in switching between dbs)
+\c <dbname>
+
+
+Data Types:
+
+how to create a table in database:
+The table in a databse in create using the keyword CREATE TABLE.
+SYNTAX:
+CREATE TABLE <table_name>{
+    column_name + datatype + constrainta if any
+}
+
+eg:
+
+CREATE TABLE person{
+    id int,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    gender VARCHAR(1),
+    date_of_birth TIMESTAMP
+};
+
+a.) creating table without constraints
+CREATE TABLE person(
+    id int,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    gender VARCHAR(1),
+    date_of_birth TIMESTAMP
+
+);
+
+b.) creating table with constraints
+
+CREATE TABLE person (
+    id BIGSERIAL NOT NULL PRIMARY KEY, // autoincrement , value cannot be null, plus a primary key for the table
+    first_name VARCHAR(50) NOT NULL, // value cannot be null
+    last_name VARCHAR(50) NOT NULL,// value cannot be null
+    gender VARCHAR(7) NOT NULL, // value cannot be null
+    date_of_birth DATE NOT NULL // value cannot be null
+);
+
+Insert record(s) into the table:
+The data records can be entered into the table using the INSERT INTO
+Syntax:
+INSERT INTO <table_name> (<column_name to add data>) values (<actual data record values>);
+each value is seperated by "," comma
+eg:
+INSERT INTO person (first_name,last_name,gender,date_of_birth) values ('Anne','Smith','FEMALE',DATE '1998-01-09');
+
+INSERT INTO person (first_name,last_name,gender,date_of_birth,email) values ('Jake','Jones','MALE',DATE '1998-01-10',jake@gmail.com);
+
+
+Bulk insert using Mockaroo
+generate data as per need:
