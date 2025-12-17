@@ -80,6 +80,7 @@ generate data as per need:
 sql file
  F:/postgress/01-introduction/person.sql
 
+\i F:/postgress/01-introduction/car.sql;
 
 SELECT FROM:
 it is a basic command for quering for information.
@@ -145,4 +146,22 @@ GROUP BY HAVING:
 SELECT country_of_birth,COUNT(*) from person GROUP BY country_of_birth HAVING COUNT (*) > 5 ORDER BY country_of_birth;
 
 
+Calculating MAX,MIN and average:
+MAX: SELECT MAX(price) from car;
+MIN: SELECT MIN(price) from car;
+AVERAGE: SELECT AVERAGE(price) from car;
+ROUND: SELECT ROUND(AVG(price)) from car;
 
+SCENARIOS:
+1.) min,max and AVG,count car price for each make and model combination
+SELECT make,model,MIN(price),MAX(price),AVG(price) FROM car GROUP BY make,model;
+SELECT make,MIN(price),MAX(price),AVG(price),count(*) FROM car GROUP BY make;
+
+SUM:
+SELECT make,SUM(price) FROM car GROUP BY make;
+
+COALESCE: find a default value if null
+
+NULLIF: used to prevent divison by zero
+
+Timestamps and Date:

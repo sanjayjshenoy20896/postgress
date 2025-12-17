@@ -1,0 +1,5 @@
+primary key:
+A key that is used to uniquely identify a record.
+
+Understanding primary keys:
+In the absence of primary key, there will not be a way to uniquely identify a row by a fields
