@@ -74,5 +74,75 @@ INSERT INTO person (first_name,last_name,gender,date_of_birth) values ('Anne','S
 INSERT INTO person (first_name,last_name,gender,date_of_birth,email) values ('Jake','Jones','MALE',DATE '1998-01-10',jake@gmail.com);
 
 
-Bulk insert using Mockaroo
+Bulk insert using Mockaroo -> This is a website used to generate data mock data as per schema requirements
 generate data as per need:
+
+sql file
+ F:/postgress/01-introduction/person.sql
+
+
+SELECT FROM:
+it is a basic command for quering for information.
+select * from person
+* -> used to get all fields from the table
+we can also specify the names of columns as per need.
+
+ORDER BY: Sortung operation:
+eg: SELECT * FROM person ORDER BY country_of_birth ASC;
+
+if condition of ORDER BY not mentioned, then it is asecending by default
+ASC OR DESC
+
+DISTINCT:
+To find unique column values -> "DISTINCT <column_name>"
+eg: SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth ASC;
+
+WHERE CLAUSE , AND operation:
+WHERE -> Used to mention the specific fields with a value
+AND -> used for comnbing the conditions of 2 or more values
+
+Comparison operation: (bitwise and logical operation)
+=,<,<=,>,>=
+<> -> not equal
+
+LIMIT, OFFSET AND FETCH
+
+EG:
+SELECT * FROM person LIMIT 5;
+
+SELECT * FROM person OFFSET 5 LIMIT 5;
+
+SELECT * FROM person OFFSET 5 FETCH FIRST 15 ROW ONLY; -> This is used to fetch users form n+1 index anmd get the next n rows;
+
+IN:
+SELECT * FROM person WHERE country_of_birth IN ('China','Portugal');
+
+it is used to query for information for a list (array) of values;
+
+Between:(Range of values);
+
+SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2000-01-01' AND '2025-01-01';
+
+LIKE and iLIKE:
+SELECT * FROM person WHERE email LIKE '%hc360.com';
+ SELECT * FROM person WHERE email LIKE '_____@%';
+
+
+SELECT * FROM person WHERE country_of_birth iLIKE  'ch%';
+Above cmd gets the records whose country_of_birth starts with ch as case in-sensitive
+
+
+- -> there many chars before and after
+%-> multiple chars before and after
+
+GROUP BY
+
+SELECT country_of_birth,COUNT(*) from person GROUP BY country_of_birth;
+Above cmd is used for grouping operation and finding the total for each
+
+
+GROUP BY HAVING:
+SELECT country_of_birth,COUNT(*) from person GROUP BY country_of_birth HAVING COUNT (*) > 5 ORDER BY country_of_birth;
+
+
+
