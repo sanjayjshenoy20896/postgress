@@ -3,3 +3,68 @@ A key that is used to uniquely identify a record.
 
 Understanding primary keys:
 In the absence of primary key, there will not be a way to uniquely identify a row by a fields
+
+
+Removing the primary key constraint:
+ALTER TABLE person  DROP CONSTRAINT person_pkey;
+
+ALTER TABLE person ADD PRIMARY KEY (id);
+
+unique constraints:
+select email ,count(*) FROM person GROUP BY email HAVING COUNT(*) > 1;
+It is used to have unique values for  a column.
+
+to add a constraint:
+Option 1
+syntax:
+ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> UNIQUE(<list of unique column_name>)
+eg:
+ALTER TABLE person ADD CONSTRAINT unique_email_address UNIQUE (email);
+
+Option 2 -> allows postgres to name the constraint
+SYNTAX
+ALTER TABLE person ADD UNIQUE (email);
+
+
+to remove a unique constraint:
+ALTER TABLE person DROP CONSTRAINT unique_email_address;
+
+
+Check constraint:
+It is used to check the value to be from list of allowed values or pre defined values
+SYNTAX:
+ALTER TABLE <table_name> ADD CONSTRAINT <constraint_name> CHECK (<define the constraint to check>)
+eg:
+ALTER TABLE person ADD CONSTRAINT gender_constarint CHECK(gender = "Male" OR gender = "Female");
+
+DELETE or UPDATE records:
+The below command is dangerous -> DELETE FROM person; 
+It will delete all rows from tables
+
+DELETE RECORDS:
+Syntax:
+DELETE FROM person <condition/filter>
+eg:
+DELETE FROM person WHERE id = 1;
+
+UPDATE RECORDS:
+Syntax
+UPDATE table_name
+SET <column_name> = <column_value>   -> add multiple columns sep by comma(,)
+<condition>
+
+eg:
+UPDATE person SET email = 'gasper.walters@gnail.com' WHERE first_name = 'Gasper' AND last_name = 'Walters';
+
+Conflict do nothing: (duplciate key errors or exceptions)
+INSERT INTO person (id,first_name,last_name,gender,email,date_of_birth,country_of_birth) VALUES ('914','Aguste','Brounsell','Male',' abrounsellr7@ox.ac.uk', DATE '2025-05-25','Malaysia') ON CONFLICT (id) DO NOTHING;
+
+This is used to handle errors by performing no operation in case of constraint conflict duting insert / update
+
+Upsert:
+INSERT INTO person (id,first_name,last_name,gender,email,date_of_birth,country_of_birth) VALUES ('914','Aguste','Brounsell','Male',' abrounsellr7@ox.ac.uk', DATE '2025-05-25','Malaysia') ON CONFLICT (email) DO UPDATE SET email = EXCLUDED.email;
+
+Above command will not create but it will update the column_name mentioned. This is mainly used in distributed systems.
+
+
+

@@ -1,0 +1,58 @@
+Relationship / Foriegn keys:
+The scenario we are looking at it is as follows with the existing tables for person and car
+1.) Person has car
+2.) Person can have one car
+3.) Car can belong to one person only
+
+
+This can be achived by using relationship between tables.
+
+In our person table , we cab create a foreign key which references the car id in the person
+So here the car_id becomes the foreign key in the person table
+
+Foriegn Key:
+key is column that references a primary key of another table in the current table.
+
+Adding relationship between tables:
+create table car (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	make VARCHAR(100) NOT NULL,
+	model VARCHAR(100) NOT NULL,
+	price NUMERIC(19, 2) NOT NULL
+);
+
+create table person (
+    id BIGSERIAL NOT NULL PRIMARY KEY,
+	first_name VARCHAR(50) NOT NULL,
+	last_name VARCHAR(50) NOT NULL,
+	gender VARCHAR(7) NOT NULL,
+	email VARCHAR(100),
+	date_of_birth DATE NOT NULL,
+	country_of_birth VARCHAR(50) NOT NULL,
+	car_id BIGINT REFERENCES car (id),
+	UNIQUE(car_id)
+);
+
+Updating Foriegn keys columns can be done by using UPDATE cmd with value for id
+
+
+Joins:
+TABLE A:
+TABLE B:
+
+inner joins: it is used to take data from 2 tables and give common data elements
+A intersection B = C -> VIRTUAL TABLE C
+SELECT * FROM person JOIN car ON person.car_id = car.id;
+
+\x -> expanded display per r
+
+Left joins:
+combines all rows from left table id and records from table b with corresponding relationship as well as those not having the relationship.
+SELECT * FROM person LEFT JOIN car ON person.car_id = car.id;
+
+
+provided left over from intersection:
+SELECT * FROM person LEFT JOIN car ON person.car_id = car.id WHERE car.* is NULL;
+
+
+DELETE records with foriegn keys;
