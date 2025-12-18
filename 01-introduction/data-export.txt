@@ -1,0 +1,7 @@
+Exporting query data into csv file:
+syntax:
+
+\copy (<query to be exported>) TO <FILE_PATH> DELIMITER <DELIMITER_TYPE> <option>
+
+ \copy (SELECT * FROM person LEFT JOIN car ON car.id = person.car_id) TO 'F://postgress/01-introduction/results.csv' DELIMITER ',' CSV HEADER;
+COPY 3

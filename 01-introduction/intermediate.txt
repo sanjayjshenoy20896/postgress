@@ -68,3 +68,51 @@ Above command will not create but it will update the column_name mentioned. This
 
 
 
+Serial and sequences:
+BIGSERIAL -> special datatype that auto increments (This is actually a big int with a autoincrement feature);
+The sequence is stored in a special key called car_id_seq.
+
+
+ SELECT * FROM person_id_seq; -> it will give the last sequence value.
+
+ select nextval('person_id_seq'::regclass); -> this function actually incremnts the sequence id;
+
+Sequences are basically BIGINT. Whose future value is stored in sequence value.
+
+How to restart the sequence:
+Syntax:
+ALTER SEQUENCE <sequence_name> RESTART WITH <NUMBER>;
+Eg:
+ALTER SEQUENCE person_id_seq RESTART WITH 9;
+
+
+Extensions:
+They are used for adding additional functionality to our existing databases.
+
+Generate universally unique identifiers (UUIDs)
+Generate unique identifier for the field in the table.
+A universally unique identifier (UUID) is a 128-bit number designed to be a unique identifier for objects in computer systems.
+Collison is impossible.
+
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp" ;
+eg: 923ef1e9-b8b4-4010-bd3a-1da3949145e7
+
+UUID as primary keys:
+Using the extension, we are able to perform this operation.
+
+
+During joins if the primary key and foreign key in individual table is same. we could join using field name
+INNER JOIN:
+Previous query:
+this is the safe way
+SELECT * FROM person JOIN car ON car.car_uid = person.car_uid;
+updated query:
+SELECT * FROM person JOIN car USING (car_uid);
+
+LEFT JOIN:
+this is the safe way
+Previous  query:
+SELECT * FROM person LEFT JOIN car ON car.car_uid = person.car_uid;
+updated Query:
+SELECT * FROM person LEFT JOIN car USING (car_uid);
+
