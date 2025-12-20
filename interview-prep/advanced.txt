@@ -1,0 +1,71 @@
+Immediate:
+
+1.) Normalization:
+normalization involves multiple steps to reduce data redundancy and complexity.
+
+2.) Triggers:
+It is like a callback function that is used to maintain a function that executes when CRUD operations are performed in a table.
+This is generally used for statstical operations
+This is also used to maintain data integrity of the operations
+
+3.) How do you make database back up of a database.
+There are three main methods of database backup
+d.) SQL dump
+b.) File system based backup
+c.) On-line backup
+
+4.) What is the use of pg_dump?
+It is used to create a text file that is used to run on a sql server.
+
+5.) How can you delete a table, as well as any other object associated with it, such as views, triggers, functions, and stored procedures?
+To delete a table we can use DROP TABLE <table_name>
+
+in the table , where it a primary key, we could define the tale with DELETE ON CASCADE. so it would delete the row autimatically when the key resembles the foriegn key irs removed from the table.
+or 
+We need to individually drop the references before droping the main value. This is considered a safe appraoch.
+
+6.) benefits of partitioning
+allows to divide a table into smaller, more manageable partitions, which translate into increased query performance.
+
+7.) What is the fastest way to delete all rows from the table?
+There are 2 ways to delete all rows from the value
+a.) TRUNCATE -> it is used to remove records without a table scan
+b.) DELETE -> This is used to rmeove records selectively
+
+8.) SQL Commands used to control transaction?
+
+a.) BEGIN TRANSACTION -> to start a transaction.
+b.) COMMIT/ END TRANSACTION  -> to store a transaction.
+c.) ROLLBACK -> to undo transaction that have not been saved
+
+9.) How security is ensured in POSTGRES?
+The security can be maintained by the following ways
+a.) Database File protection: All files stored within a database can only be viewed by a postgress super user.
+b.) Connection of a client to a server can be only by a local connection on same machine.
+c.) Client Connection can be done by IP Address and / or user name
+d.) Each user can be assigned a username and password
+e.) Each user can be assigned in a group or table with restricted access.
+
+10.) Parallel querying
+allows you to create query plans that can leverage multiple CPUs to answer queries more efficiently. 
+
+11.) how to improve query performance
+a.) While using SELECT , use only data that is required. avoid overfetching.
+b.) Use indexing for queries, which involves WHERE  clauses in query
+c.) Data partitioning
+d.) Optimising memory usage to allow complex queries to tune server parameters to match the hardware specs.
+
+12.) How does the EXPLAIN and ANALYZE command works?
+EXPLAIN:
+This includes the manner the table(s) referenced in your statement will be processed, the underlying algorithms that will be used for complex operations, such as joins, as well as the estimated execution time.
+ANALYZE:
+This is used to explain how the command is executed and time taken to execute the command.
+
+13.) How do handle errors in postgress
+a.) Callback functions:
+It can be developed to handle errors and warning during transaction. This can be done by using the WHENEVER command
+b.) maintain detailed information regarding the error or warning from the sqla variable
+Create the query by using the variable. By this way the variables and its scoped value scan be tracked.
+
+SQL Variable:
+It is a named storage location used to hold a single data value temporarily during the execution of SQL statements, a script, a function, or a stored procedure

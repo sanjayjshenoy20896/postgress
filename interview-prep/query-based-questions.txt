@@ -1,0 +1,24 @@
+Query based Questions
+
+1.) How do you create a database ?
+The database can be created by using the command CREATE DATABASE <database_name>
+
+2.) how do you create a table within a table?
+The table in the database can be created by using the command CREATE TABLE <table_name> 
+
+3.) how do you add new values in a table?
+The new values in the table can be added using the INSERT command.
+INSERT INTO <table_name> (<list of column name>) VALUES (<Values to list of columns>)
+
+4.) how do you delete a table or a DATABASE?
+delete a table -> DROP TABLE <table_name>
+delete a database -> DROP DATABASE <database_name>
+
+5.) How do you get 5 records from the customer table?
+SELECT * FROM customer LIMIT 5;
+
+
+6.) How do you update a record in a table
+UPDATE TABLE <table_name> SET [<column_name> = <column_value>] WHERE <condition>
+
+

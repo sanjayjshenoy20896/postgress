@@ -1,0 +1,42 @@
+Intermediate questions:
+
+1.) Difference between primary key and foriegn key?
+foriegn key -> It is actually a primary key in another table. This key might be a NULL or NOT NULL.
+primary key -> It is actually a unique constraint in a table. This cannot be a null value.
+
+13.) Multi-version Concurrency Control:
+This means that while querying a database each transaction sees a snapshot of data (a database version) as it was some time ago, regardless of the current state of the underlying data.
+
+
+14.) Main operators:
+The main types of operators available in PostgreSQL are:
+
+Arithmetic operators
+Logical operators
+Comparison operators
+Bitwise operators
+
+15.) Indexes
+An index is a special data structure related to a table and used for storing its important parts and enabling faster data search and retrieval.
+
+16.) Partitioning in PSQL:
+It’s the process of splitting a large table into smaller pieces
+
+
+17.) Write-Ahead Logging 
+This is used to maintain any writeing operation to a table in a database in a write transaction log.
+This helps in maintaining database in case of database or system failure.
+
+18.) Difference types of Joins
+In PostgreSQL, the main joins are:
+
+INNER JOIN: Returns records that have matching values in both tables
+LEFT JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT JOIN: Returns all records from the right table, and the matched records from the left table
+FULL JOIN: Returns all records when there is a match in either left or right table
+
+19.) Function - Stored procedures
+This allows you to wrap in several queries together in a single procedure which would take multiple queries in any scenario.
+
+20.) View:
+It is a virtual result of a query that combines results of 2 or more tables.

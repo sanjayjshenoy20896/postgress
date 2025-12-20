@@ -1,0 +1,83 @@
+Basic Questions:
+1.) What is PostGreSQL?
+It is a open source, lightweight open-source  relational database system.
+It stores data in rows and colums in a structured format
+
+2.) Benefits:
+
+a.) Robustness that makes it suitable for all kinds of applications,
+b.) Free and open-source,
+c.) Security and reliability
+d.) Wide variety of data types,
+e.) A big community of users worldwide.
+
+3.) Main applications
+
+a.) CRUD operations in a database.
+b.) Access , Manipulate and Delete data records
+c.) Retrieve and summarize the necessary information from a table or several tables,
+d.) Add or remove certain rows in the database
+
+4.) CRUD operations
+Create Read Update and Delete are the basic operations in the database. They are reffered to as CRUD 
+
+5.) Database in PSQL?
+It is structured storage space defined in rows and columns. They can be manipulated and summarised in a manner required.
+
+6.) What is PGADMIN?
+It is tool that helps in managing the database using a graphical user interface.
+
+5.) What is a schema?
+A database schema contains the logical and visual configuration of the entire relational database. 
+
+6.) CONSTRAINT?
+A set of conditions defining the type of data that can be input into each column of a table. 
+
+7.) JOIN
+Joins are used to combine and retrieve records from two or multiple tables.
+
+8.) Primary key
+A primary key is used to identify a row uniquely in a table.
+
+9.) Different types of constraints
+
+a.) CHECK
+b.) NOT NULL
+C.) UNIQUE
+d.) PRIMARY
+e.) FORIEGN KEY
+
+10.) latest version of PostGreSQL
+The latest version is 18
+
+11.) Can PostGreSQL be run on cloud.
+Yes , it can be run on cloud providers like Google, AWS and Azure
+
+12.) How do you run the database using python?
+using pl/python is a provider to manage the database.
+
+13.) What is the maximum size of table:
+The maximum size of the table is 32TB.
+
+16.) 4 STEP basic acronym for database transactions
+ACID
+A -> Atomicity -> Each database operations is handled using a transaction and the transaction can be commited or aborted based on result being success or failed
+C -> Consistancy -> Each database update or create must be handled based on CONSTRAINTS in the table to maintain database Consistancy.
+I -> Isolation -> Multiple operations to a record in a table in the database must be handled indepenedently 
+D -> Durability -> Any Crud operation in the database must be secure and remain in state irrespective or system crash or sytem durability.
+
+17.) DataTypes in postgres:
+Boolean
+Numeric Types
+Character Types
+Temporal Types
+Array
+UUID
+JSON
+Store
+Geometric data and other special types
+
+
+
+
+
