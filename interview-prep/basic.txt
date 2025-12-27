@@ -77,6 +77,13 @@ JSON
 Store
 Geometric data and other special types
 
+18.) What does the term enable-debug mean?
+It is used to make all the apps and libraries compile
+This normally slows the machine and increases the size of the binary file.
+This helps in discovering flaws and making improvements in the system.
+
+
+
 
 
 
